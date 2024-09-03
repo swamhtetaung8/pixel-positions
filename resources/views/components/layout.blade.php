@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pixel Positions</title>
-    @vite(['resources/css/app.css','resources/js/app.js'])
-  </head>
-  <body class="p-8 bg-black text-white">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..600;1,100..600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="p-8 bg-black text-white font-hanken-grotesk">
     <nav class="flex justify-between border-b pb-4 border-white/20">
         <div>
             <a href="">
-            <img src="{{ Vite::asset('resources/images/logo.svg') }}" alt="">
+                <img src="{{ Vite::asset('resources/images/logo.svg') }}" alt="">
             </a>
         </div>
         <div class="space-x-8 font-semibold">
@@ -28,7 +32,8 @@
     </nav>
 
     <main class="max-w-[968px] mx-auto">
-    {{ $slot }}
+        {{ $slot }}
     </main>
-  </body>
+</body>
+
 </html>
