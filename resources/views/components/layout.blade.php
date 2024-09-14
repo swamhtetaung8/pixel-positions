@@ -11,23 +11,45 @@
         rel="stylesheet">
 </head>
 
-<body class="p-8 bg-black text-white font-hanken-grotesk">
-    <nav class="flex justify-between border-b pb-4 border-white/20">
+<body class="p-8 pt-0 bg-black text-white font-hanken-grotesk">
+    <nav class="flex justify-between border-b pb-4 border-white/20 sticky top-0 pt-4 bg-black/50 backdrop-blur-md">
         <div>
             <a href="">
                 <img src="{{ Vite::asset('resources/images/logo.svg') }}" alt="">
             </a>
         </div>
-        <div class="space-x-8 font-semibold">
-            <a href="">Jobs</a>
-            <a href="">Careers</a>
-            <a href="">Salaries</a>
-            <a href="">Companies</a>
+        <div class="gap-8 flex items-center">
+            <x-link>
+                <x-header-text iconClass="hidden">Jobs</x-header-text>
+            </x-link>
+            <x-link>
+                <x-header-text iconClass="hidden">Careers</x-header-text>
+            </x-link>
+            <x-link>
+                <x-header-text iconClass="hidden">Salaries</x-header-text>
+            </x-link>
+            <x-link>
+                <x-header-text iconClass="hidden">Companies</x-header-text>
+            </x-link>
         </div>
-        <div>
-            <a href="">
-                <x-header-text :span-class="'bg-indigo-500'">Post a Job</x-header-text>
-            </a>
+        <div class="flex items-center justify-center gap-5">
+            @auth
+                <x-link>
+                    <x-header-text iconClass="bg-indigo-500">Post a Job</x-header-text>
+                </x-link>
+                <x-link>
+                    <x-header-text iconClass="hidden">Logout</x-header-text>
+                </x-link>
+            @endauth
+
+            @guest
+                <x-link>
+                    <x-header-text iconClass="hidden">Sign up</x-header-text>
+                </x-link>
+                <x-link>
+                    <x-header-text iconClass="hidden">Sign in</x-header-text>
+                </x-link>
+            @endguest
         </div>
     </nav>
 
