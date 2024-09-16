@@ -6,7 +6,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 interface JobListingRepositoryInterface
 {
-    public function all(int $page = 1, array $filter = [], int $perPage = 15): LengthAwarePaginator;
+    public function all(array $filter = [], int $perPage = 15, string $pageName = page): LengthAwarePaginator;
 
     public function create(array $data);
 

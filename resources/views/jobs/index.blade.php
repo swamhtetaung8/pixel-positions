@@ -12,6 +12,9 @@
                 />
             @endforeach
         </div>
+        <div class="text-black">
+            {{ $featuredJobs->links() }}
+        </div>
     </x-section-wrapper>
     <x-section-wrapper class="my-8">
         <x-header-text>Tags</x-header-text>

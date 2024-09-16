@@ -6,7 +6,6 @@ use App\Http\Requests\StoreJobListingRequest;
 use App\Http\Requests\UpdateJobListingRequest;
 use App\Models\JobListing;
 use App\Services\JobListingService;
-use Illuminate\Http\Request;
 
 class JobListingController extends Controller
 {
@@ -16,13 +15,9 @@ class JobListingController extends Controller
     /**
      * Display a listing of the jobs (featured + unfeatured).
      */
-    public function index(Request $request)
+    public function index()
     {
-        // Extract pagination and filter parameters from the request
-        $unfeaturedPage = $request->query('unfeaturedPage', 1);
-        $featuredPage = $request->query('featuredPage', 1);
-
-        $allJobs = $this->jobListingsService->all($unfeaturedPage, $featuredPage);
+        $allJobs = $this->jobListingsService->all();
 
         return view('jobs.index', [
             'unfeaturedJobs' => $allJobs['unfeaturedJobListings'],

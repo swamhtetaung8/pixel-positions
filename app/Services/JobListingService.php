@@ -10,19 +10,19 @@ class JobListingService
         protected JobListingRepositoryInterface $jobListingRepository
     ) {}
 
-    public function all(int $unfeaturedPage = 1, int $featuredPage = 1): array
+    public function all(): array
     {
         // Fetch jobs with feature flag turned off (featured = "0")
         $unfeaturedJobListings = $this->jobListingRepository->all(
             perPage: 25,
-            page: $unfeaturedPage,
-            filter: ['featured' => "0"]
+            filter: ['featured' => "0"],
+            pageName: 'unfeatured_page'
         );
 
         // Fetch jobs with feature flag turned on (featured = "1")
         $featuredJobListings = $this->jobListingRepository->all(
-            page: $featuredPage,
-            filter: ['featured' => "1"]
+            filter: ['featured' => "1"],
+            pageName: 'featured_page'
         );
 
         return [
