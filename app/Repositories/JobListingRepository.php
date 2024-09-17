@@ -12,7 +12,7 @@ class JobListingRepository implements JobListingRepositoryInterface
      * Summary of all the jobs with their corresponding job owners
      * @return array
      */
-    public function all(array $filter = [], int $perPage = 15, string $pageName = 'page'): LengthAwarePaginator
+    public function all(array $filter = [], int $perPage = 9, string $pageName = 'page'): LengthAwarePaginator
     {
         return JobListing::with('jobOwner')
             ->when(!empty($filter), function ($query) use ($filter) {
