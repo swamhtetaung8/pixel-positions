@@ -14,12 +14,12 @@
 <body class="p-8 pt-0 bg-black text-white font-hanken-grotesk">
     <nav class="flex justify-between border-b pb-4 border-white/20 sticky top-0 pt-4 bg-black/50 backdrop-blur-md">
         <div>
-            <a href="">
+            <a href="/">
                 <img src="{{ Vite::asset('resources/images/logo.svg') }}" alt="">
             </a>
         </div>
         <div class="gap-8 flex items-center">
-            <x-link>
+            <x-link href="/">
                 <x-header-text iconClass="hidden">Jobs</x-header-text>
             </x-link>
             <x-link>
@@ -43,7 +43,7 @@
             @endauth
 
             @guest
-                <x-link>
+                <x-link href="sign-up">
                     <x-header-text iconClass="hidden">Sign up</x-header-text>
                 </x-link>
                 <x-link>
