@@ -1,4 +1,4 @@
-@props(['iconClass' => 'bg-white'])
+@props(['iconClass' => 'bg-indigo-500'])
 
 <header class="flex items-center gap-x-2">
     <span class="w-2 h-2 {{ $iconClass }}"></span>

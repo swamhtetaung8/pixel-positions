@@ -1,4 +1,11 @@
 <x-layout>
+    <div class="text-center space-y-2 my-10">
+        <h1
+            class="text-6xl font-bold bg-gradient-to-b text-transparent bg-clip-text from-indigo-100 via-indigo-300 to-indigo-600 inline-block">
+            Welcome to Pixel Positions!
+        </h1>
+        <p class="text-indigo-500 text-lg font-medium">Unlock your dream career with ease and confidence.</p>
+    </div>
     <x-section-wrapper class="my-8">
         <x-header-text>Top Jobs</x-header-text>
         <div class="grid lg:grid-cols-3 gap-8">
